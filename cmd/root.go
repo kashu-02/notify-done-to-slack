@@ -21,6 +21,7 @@ var rootCmd = &cobra.Command{
 	Use:   "notify-done-to-slack",
 	Short: "Notify the completion of command execution by Slack.",
 	Long:  `Notify the completion of command execution by Slack.`,
+	Args:  cobra.ArbitraryArgs,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -43,6 +44,8 @@ func init() {
 
 	rootCmd.Flags().Int32P("head", "e", 0, "Print the first n lines of standard output.")
 	rootCmd.Flags().Int32P("tail", "t", 10, "Print the last n lines of standard output.")
+
+	rootCmd.Flags().SetInterspersed(false)
 }
 
 func initConfig() {
