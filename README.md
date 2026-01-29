@@ -22,16 +22,16 @@ notify-done-to-slack configure --webhook-url YOUR_SLACK_WEBHOOK_URL
 ### Notify Command Completion
 To notify the completion of a command execution to Slack, use the tool as follows:
 ```
-your-command | notify-done-to-slack
+notify-done-to-slack your-command with any args
 ```
 
 You can also specify the number of lines to include from the start or end of the output:
 ```
-your-command | notify-done-to-slack --head 10
-your-command | notify-done-to-slack -e 10
+notify-done-to-slack --head 10 your-command with any args
+notify-done-to-slack -e 10 your-command with any args
 
-your-command | notify-done-to-slack --tail 10
-your-command | notify-done-to-slack -t 10
+notify-done-to-slack --tail 10 your-command with any args
+notify-done-to-slack -t 10 your-command with any args
 ```
 
 ## License
